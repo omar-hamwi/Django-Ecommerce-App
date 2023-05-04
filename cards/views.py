@@ -1,12 +1,10 @@
-
-from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render 
 
-def home(request):
-        return render(request,"cards/home.html")
+# def home1(request):
+#         return render(request,"cards/home.html")
 
 def home(request):
-    return render(request,"cards/base.html")
+    return render(request,"cards/home.html")
 
 
 
