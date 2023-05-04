@@ -1,26 +1,25 @@
 from django.db import models
 
-NUM_BOXES = 5
-BOXES = range(1, NUM_BOXES + 1)
+CATAGEORY_CHOICES=(
+    ('CR','Curd'),
+    ('ML','Milk'),
+    ('LS','Lassi'),
+    ('MS','Milkshakk'),
+    ('PN','Panner'),
+    ('GH','Ghee'),
+    ('CZ','Cheese'),
+    ('IC','Ice-Creams'),
+)
 
 
-class Card(models.Model):
-    question = models.CharField(max_length=100)
-    answer = models.CharField(max_length=100)
-    box = models.IntegerField(
-        choices=zip(BOXES, BOXES),
-        default=BOXES[0],
-    )
-    date_created = models.DateTimeField(auto_now_add=True)
-
+class Product(models.Model):
+    title =models.CharField(max_length=100)
+    selling_price=models.FloatField()
+    discounted_price=models.FloatField()
+    description=models.TextField()
+    composition=models.TextField(default='')
+    prodapp=models.TextField(default='')
+    category=models.CharField(choices=CATAGEORY_CHOICES, max_length=2)
+    product_image=models.ImageField(upload_to='product')
     def __str__(self):
-        return self.question
-
-    def move(self, solved):
-        new_box = self.box + 1 if solved else BOXES[0]
-
-        if new_box in BOXES:
-            self.box = new_box
-            self.save()
-
-        return self
+        return self.title
