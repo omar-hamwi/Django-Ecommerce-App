@@ -24,6 +24,8 @@ class ProductDetail(View):
     
 
 
+
+
 # class CardCreateView(CreateView):
 #     model = Card
 #     fields = ["question", "answer", "box"]
