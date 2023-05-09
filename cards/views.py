@@ -1,7 +1,7 @@
 from django.shortcuts import render 
 from django.views import View
-from  . models import Product
-from django.db.models import Count 
+from  . models import Product 
+
 # def home1(request):
 #         return render(request,"cards/home.html")
 
@@ -15,6 +15,13 @@ class CategoryView(View):
         title=Product.objects.filter(category=val).values('title')
         return render(request,"cards/category.html",locals())
 
+
+class categoryTitle(View):
+    def get(self,request,val):
+        product=Product.objects.filter(title=val)
+        title=Product.objects.filter(category=product[0].category).values('title')
+        return render(request,"cards/category.html",locals())
+    
 
 
 class ProductDetail(View):
