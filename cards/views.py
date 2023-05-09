@@ -9,8 +9,8 @@ def home(request):
 
 
 class CategoryView(View):
-    def get(self,request):
-        return render(request,"cards/category.html")
+    def get(self,request,val):
+        return render(request,"cards/category.html",locals())
 
 
 
