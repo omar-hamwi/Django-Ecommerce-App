@@ -1,4 +1,5 @@
 from django.shortcuts import render 
+from django.views import View
 
 # def home1(request):
 #         return render(request,"cards/home.html")
@@ -7,7 +8,9 @@ def home(request):
     return render(request,"cards/home.html")
 
 
-
+class CategoryView(View):
+    def get(self,request):
+        return render(request,"cards/category.html")
 
 
 
