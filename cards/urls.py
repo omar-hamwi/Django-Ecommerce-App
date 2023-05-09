@@ -6,6 +6,7 @@ from django.conf import settings
 urlpatterns = [
     path("",views.home),
     path("category/<slug:val>",views.CategoryView.as_view(), name="category"),
+    path("product-detail/<int:pk>",views.ProductDetail.as_view(), name="product-detail"),
     # path("new", views.CardCreateView.as_view(), name="card-create"),
 #     path("edit/<int:pk>", views.CardUpdateView.as_view(), name="card-update"),
 #     path("box/<int:box_num>", views.BoxView.as_view(), name="box"),

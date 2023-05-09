@@ -17,6 +17,13 @@ class CategoryView(View):
 
 
 
+class ProductDetail(View):
+    def get(self,request,pk):
+        product=Product.objects.get(pk=pk)
+        return render(request,"cards/productdetail.html",locals())
+    
+
+
 # class CardCreateView(CreateView):
 #     model = Card
 #     fields = ["question", "answer", "box"]
