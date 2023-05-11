@@ -1,7 +1,25 @@
 {% extends "cards/base.html" %}
 {% load static %}
 {% block title%} About{% endblock title %}
+{%block banner-slider%}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+   <div class="carousel-inner">
+       <div class="carousel-item active">
+           <img src="{% static 'app/images/banner/b1.jpg' %}" class="d-block w-100" alt="banner-slider" >
+       </div>
+       <div class="carousel-item ">
+           <img src="{% static 'app/images/banner/b2.jpg' %}" class="d-block w-100" alt="banner-slider" >
+       </div>
+       <div class="carousel-item ">
+           <img src="{% static 'app/images/banner/b3.jpg' %}" class="d-block w-100" alt="banner-slider" >
+       </div>
+       <div class="carousel-item ">
+           <img src="{% static 'app/images/banner/b4.jpg' %}" class="d-block w-100" alt="banner-slider">
+       </div>
 
+   </div>
+</div>
+{% endblock banner-slider %}
 {% block main-content%}
 <div class="container mt-3">
     <br>
@@ -18,5 +36,5 @@
              used by Milkman Milk and how they affect the user interaction and engagement with the company. Explore 32 technologies across 7 categories used by Milkman Milk</p>
     </div>
 </div>
-
+<br></br>
 {%endblock main-content %}
