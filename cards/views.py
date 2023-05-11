@@ -1,7 +1,7 @@
 from django.shortcuts import render 
 from django.views import View
 from  . models import Product 
-
+from . forms import CustomerRegistrationForm
 
 def home(request):
     return render(request,"cards/home.html")
@@ -34,5 +34,14 @@ class ProductDetail(View):
         return render(request,"cards/productdetail.html",locals())
     
 
-
+class CustomerRegistrationView(View):
+    def get(self,request):
+        form =CustomerRegistrationForm()
+        return render(request,"cards/customerregistration.html",locals())
+    def post(self,request):
+        form =CustomerRegistrationForm(request.POST)
+        if  form.is_valid():
+            form.save()
+    
+        
 
