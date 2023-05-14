@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from  . models import Product 
 from . forms import CustomerRegistrationForm
+from django.contrib import messages
+
+
 
 def home(request):
     return render(request,"cards/home.html")
@@ -42,6 +45,10 @@ class CustomerRegistrationView(View):
         form =CustomerRegistrationForm(request.POST)
         if  form.is_valid():
             form.save()
-    
+            messages.success(request,"Congratuluation ! User Register Successfully")
+        else:
+            messages.warning(request,"Invalid Data Input")
+        return render(request,"cards/customerregistration.html",locals())
+
         
 
