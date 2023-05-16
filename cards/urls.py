@@ -13,7 +13,7 @@ urlpatterns = [
     path("category-title/<val>",views.categoryTitle.as_view(), name="category-title"),
     path("product-detail/<int:pk>",views.ProductDetail.as_view(), name="product-detail"),
     path("profile/",views.ProfileView.as_view(), name="profile"),
-    path("address/",views.ProfileView.as_view(), name="address"),
+    path("address/",views.address, name="address"),
 
    
    #login Authentication

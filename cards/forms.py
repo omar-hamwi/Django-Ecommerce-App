@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm , AuthenticationForm , UsernameField , PasswordChangeForm
 from django.contrib.auth.models import User
-from .models  import Customer 
+from . models  import Customer 
 
 
 #this class for login
@@ -33,9 +33,9 @@ class CustomerRegistrationForm(UserCreationForm):
  
 
 class CustomerProfileForm(forms.ModelForm):
-    class Meta:
+    class Meta: 
         model=Customer
-        fields=['id','user','locality','city','state','zipcode']
+        fields=['name','locality','city','mobile','state','zipcode']
         widgets={
             'name':forms.TextInput(attrs={'class':'form-control'}),
             'locality' :forms.TextInput(attrs={'class':'form-control'}),
