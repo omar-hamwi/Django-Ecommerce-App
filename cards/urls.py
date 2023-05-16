@@ -13,10 +13,13 @@ urlpatterns = [
     path("category-title/<val>",views.categoryTitle.as_view(), name="category-title"),
     path("product-detail/<int:pk>",views.ProductDetail.as_view(), name="product-detail"),
     path("profile/",views.ProfileView.as_view(), name="profile"),
+    path("address/",views.ProfileView.as_view(), name="address"),
 
    
    #login Authentication
     path('registration/',views.CustomerRegistrationView.as_view(),name='customerregistration'),
+
+    # here we dont need to write view immedietly we write url and  inside this url we have build in view called "auth_view" only we need import it in the up 
     path('accounts/login/',auth_view.LoginView.as_view(template_name='cards/login.html',authentication_form=LoginForm),name='login'),
     path('password-reset/',auth_view.PasswordResetView.as_view(template_name='cards/password_reset.html',form_class=MyPasswordResetForm),name='Password_reset'),
    

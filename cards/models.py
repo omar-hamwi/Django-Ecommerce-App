@@ -44,3 +44,8 @@ class Customer(models.Model):
     state=models.CharField(choices=STATE_CHOICES,max_length=100)
     def __str__(self):
         return self.name
+    
+##__unicode__ is a Python "magic method" that determines how your object looks when you want to display that object as a unicode string. 
+# It's not Django-specific or anything, 
+# but any time you either call str() or unicode() or use string interpolation and pass that object in, 
+# it will call that method to determine what unicode string is returned.

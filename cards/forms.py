@@ -10,6 +10,9 @@ class LoginForm(AuthenticationForm):
     password=forms.CharField(widget=forms.PasswordInput(attrs={'autocomplete':'current-password' , 'class':'form-control'}))
 
 
+class MyPasswordResetForm(PasswordChangeForm):
+    pass
+
 #This class for registration
 class CustomerRegistrationForm(UserCreationForm):
     username=forms.CharField(widget=forms.TextInput(attrs={'autofocus':'True','class':'form-control'}))
@@ -27,8 +30,7 @@ class CustomerRegistrationForm(UserCreationForm):
 # of certain objects, a metaclass defines the behavior of certain classes 
 # and their instances. Not all object-oriented programming languages support metaclasses.
 
-class MyPasswordResetForm(PasswordChangeForm):
-    pass 
+ 
 
 class CustomerProfileForm(forms.ModelForm):
     class Meta:
