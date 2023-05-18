@@ -79,7 +79,8 @@ def address(request):
     
 class updateAddress(View):
     def get(self,request,pk):
-        form=CustomerProfileForm()
+        add=Customer.objects.get(pk=pk)
+        form=CustomerProfileForm(instance=add)
         return render(request,'cards/updateaddress.html',locals() ) 
     def post(self,request,pk):
         form=CustomerProfileForm()
