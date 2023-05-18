@@ -77,3 +77,10 @@ def address(request):
     add=Customer.objects.filter(user=request.user)
     return render(request,'cards/address.html',locals() )
     
+class updateAddress(View):
+    def get(self,request,pk):
+        form=CustomerProfileForm()
+        return render(request,'cards/updateaddress.html',locals() ) 
+    def post(self,request,pk):
+        form=CustomerProfileForm()
+        return render(request,'cards/updateaddress.html',locals() )
