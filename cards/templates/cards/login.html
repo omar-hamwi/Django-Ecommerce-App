@@ -12,7 +12,7 @@
                 {%for fm in form%}
                     {{fm.label_tag}} {{fm}}<small class="text-danger">{{fm.errors|striptags}}</small><br>
                 {%endfor%} 
-                <small> <a href="{% url 'Password_reset' %}">Forget Password ? </a></small>
+                <small> <a href="{% url 'password_reset' %}">Forget Password ? </a></small>
                 <br>
                 <input type ='submit' class="btn btn-primary mt-4" value="login">
 
@@ -21,7 +21,7 @@
                 {%if form.non_field_errors%} 
                     {% for error in form.non_field_errors%}
                             <p class="alert alert-danger my-3">{{error}}</p>
-                    {%endfor%}
+                    {%endfor%}  
                 {% endif %} 
             </form>
         </div>

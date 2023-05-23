@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm , AuthenticationForm , UsernameField , PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm , AuthenticationForm , UsernameField , PasswordChangeForm , SetPasswordForm , PasswordResetForm
 from django.contrib.auth.models import User
 from . models  import Customer 
 
@@ -10,8 +10,12 @@ class LoginForm(AuthenticationForm):
     password=forms.CharField(widget=forms.PasswordInput(attrs={'autocomplete':'current-password' , 'class':'form-control'}))
 
 
-class MyPasswordResetForm(PasswordChangeForm):
-    pass
+
+
+#RESET PASSWORD TO EMAIL
+    
+
+
 
 #This class for registration
 class CustomerRegistrationForm(UserCreationForm):
@@ -35,6 +39,17 @@ class MyPasswordChangeForm(PasswordChangeForm):
     old_password=forms.CharField(label='Old Password', widget=forms.PasswordInput(attrs={'autofocus':'True', 'autocomlete':'current-password','class':'form-control'}))
     new_password1=forms.CharField(label='new_password1', widget=forms.PasswordInput(attrs={'autofocus':'True', 'autocomlete':'current-password','class':'form-control'}))
     new_password2=forms.CharField(label='new_password2', widget=forms.PasswordInput(attrs={'autofocus':'True', 'autocomlete':'current-password','class':'form-control'}))
+
+class MyPasswordResetForm(PasswordResetForm):
+    email=forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+class  MySetPasswordForm(SetPasswordForm):
+    new_password1=forms.CharField(label='new Password', widget=forms.PasswordInput(attrs={'autocomplete':'currnet-password','class':'form-control'}))
+    new_password2=forms.CharField(label='Confirm New Password', widget=forms.PasswordInput(attrs={'autocomplete':'currnet-password','class':'form-control'}))
+
+
+
+
+
 class CustomerProfileForm(forms.ModelForm):
     class Meta: 
         model=Customer
