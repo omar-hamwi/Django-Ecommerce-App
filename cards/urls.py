@@ -15,8 +15,10 @@ urlpatterns = [
     path("profile/",views.ProfileView.as_view(), name="profile"),
     path("address/",views.address, name="address"),
     path("updateAddress/<int:pk>",views.updateAddress.as_view(),name="updateAddress"),
+    path("add-to-cart/",views.add_to_cart,name='add-to-cart'),
+    path("cart/",views.show_cart,name='showcart'),
+    path("chekout/",views.show_cart,name='chekout'),
 
-    
    #login Authentication
     path('registration/',views.CustomerRegistrationView.as_view(),name='customerregistration'),
 
@@ -38,3 +40,5 @@ urlpatterns = [
 #     path("edit/<int:pk>", views.CardUpdateView.as_view(), name="card-update"),
 #     path("box/<int:box_num>", views.BoxView.as_view(), name="box"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
