@@ -1,5 +1,4 @@
 ![Annotation 2023-06-02 132338](https://github.com/omar-hamwi/Django-Ecommerce-App/assets/72281750/39cf1030-12d9-4b91-9233-163f96586978)
-![Annotation 2023-06-02 132452](https://github.com/omar-hamwi/Django-Ecommerce-App/assets/72281750/677d086a-221e-4372-8481-21caa0ec6c27)
 # Django-Ecommerce-App
 >> In this project I used this Technologies in Django : 
 >> 
