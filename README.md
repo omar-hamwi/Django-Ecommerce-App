@@ -14,12 +14,15 @@
 >> 6-Adding Custom Database To Django Project. 
 >> 
 >> 7-HTTP requests ,URL dispatcher.
-
-
-
-8-Templates;The Django template language.
-10-Class-based views; Introduction to class-based views.
-11-CRUD in Django Views ;(Create Retrieve Update Delete List).
-12-User Registration .
-13-Authentication Method . 
-14-How To Change Password And Update Password . 
+>> 
+>> 8-Templates;The Django template language.
+>> 
+>> 10-Class-based views; Introduction to class-based views.
+>> 
+>> 11-CRUD in Django Views ;(Create Retrieve Update Delete List).
+>> 
+>> 12-User Registration .
+>> 
+>> 13-Authentication Method . 
+>> 
+>> 14-How To Change Password And Update Password . 
